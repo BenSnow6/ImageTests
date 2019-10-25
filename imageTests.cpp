@@ -11,3 +11,13 @@ TEST(image, fail)
     EXPECT_EQ(i.height(),0);
     EXPECT_EQ(i.channels(),3);
 }
+
+TEST(image,userCtor)
+{
+    image i(100,100); //set width and height to 100
+    EXPECT_EQ(i.width(),100); //test width and height are 100
+    EXPECT_EQ(i.height(),100);
+    EXPECT_EQ(i.channels(),3);
+    EXPECT_NE(i.pixels(), nullptr); //check the default value of i.pixels is the null pointer
+
+}
