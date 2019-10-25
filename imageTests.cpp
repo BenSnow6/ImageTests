@@ -6,5 +6,8 @@ using namespace ::testing;
 // my lecture https://nccastaff.bournemouth.ac.uk/jmacey/PP/slides/testing/slides.html#/
 TEST(image, fail)
 {
-    ASSERT_EQ(0,1);
+    image i;
+    EXPECT_EQ(i.width(),0);
+    EXPECT_EQ(i.height(),0);
+    EXPECT_EQ(i.channels(),3);
 }
