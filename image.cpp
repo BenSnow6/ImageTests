@@ -28,9 +28,9 @@ void image::setPixel(unsigned int _x, unsigned int _y, unsigned char _r, unsigne
 void image::getPixel(unsigned int _x, unsigned int _y, unsigned char &o_r, unsigned char &o_g, unsigned char &o_b)
 {
     size_t index=0;
-    m_pixels[index]=_r;
-    m_pixels[index+1]=_g;
-    m_pixels[index+2]=_b;
+    o_r=m_pixels[index];
+    o_g=m_pixels[index+1];
+    o_b=m_pixels[index+2];
 }
 
 unsigned int image::width() const

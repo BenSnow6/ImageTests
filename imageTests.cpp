@@ -31,4 +31,11 @@ TEST(image,setPixel)
     EXPECT_TRUE(g==0);
     EXPECT_TRUE(b==0);
 
+    i.setPixel(15,60,23,50,11); //position followed by colour (x,y,r,g,b)
+    i.getPixel(0,0,r,g,b);
+    EXPECT_TRUE(r==23);
+    EXPECT_TRUE(g==50);
+    EXPECT_TRUE(b==11);
+
+
 }
