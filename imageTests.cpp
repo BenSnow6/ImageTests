@@ -32,11 +32,43 @@ TEST(image,setPixel)
     EXPECT_TRUE(b==0);
 
     i.setPixel(15,60,23,50,11); //position followed by colour (x,y,r,g,b)
-    i.getPixel(0,0,r,g,b);
+    i.getPixel(15,60,r,g,b);
     EXPECT_TRUE(r==23);
     EXPECT_TRUE(g==50);
     EXPECT_TRUE(b==11);
 
+}
 
+TEST(image,writeFile)
+{
+    image i(100,100);
+    i.setPixel(0,0,255,0,0);
+    i.setPixel(1,0,0,255,0);
+    i.setPixel(2,0,0,0,255);
+    EXPECT_TRUE(i.write("test.png"));  //this is the _fname that is parsed to the image write function
+}
+
+TEST(image,clearColour)
+{
+    image i(100,100);
+    i.clearColour(110,255,255);
+    i.setPixel(0,0,255,0,0);
+    i.setPixel(1,0,0,255,0);
+    i.setPixel(2,0,0,0,255);
+    EXPECT_TRUE(i.write("test.png"));
+}
+
+
+TEST(image,copyCtor)
+{
+    image i(100,100);
+    i.clearColour(110,255,255);
+    i.setPixel(0,0,255,0,0);
+    i.setPixel(1,0,0,255,0);
+    i.setPixel(2,0,0,0,255);
+
+  // image b=i;
+  // unsigned char r,g,b;
+  // i.getPixel(0,0,r,g,b);
 
 }
